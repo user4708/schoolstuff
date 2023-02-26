@@ -1,6 +1,5 @@
 // Riley Olson
-// Assignment 3 Question 3
-// 01/30/2023
+// JUnit Tests for BoundedQueue class
 
 import org.junit.Test;
 import static org.junit.Assert.*;
