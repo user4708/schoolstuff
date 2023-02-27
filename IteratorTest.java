@@ -19,7 +19,9 @@ import java.util.*;
  * C2: iterator returns a non-null object reference 
  * C3: remove() is supported
  * C4: remove() precondition is satisfied
- * C5: collection in consistent state while iterator in use 
+ * C5: collection in consistent state while iterator in use
+ * C6: remove() can't remove element as the element does not exist any longer
+ * C7: remove() is not pointing towards an element thus can not remove any
  * Each characteristic has a boolean partition
  */
 
@@ -100,7 +102,7 @@ public class IteratorTest {
    }
   
   // Test 1 of next() and remove() added by riley olson
-  @Test public void testNextRemove_1(){
+  @Test public void testNextRemove_C6(){
       list.remove();
       list.next();
       list.remove();
@@ -109,7 +111,7 @@ public class IteratorTest {
   
   // Test 2 of next() and remove() added by riley olson
   (expected=IllegalStateException.class)
-  @Test public void testNextRemove_2(){
+  @Test public void testNextRemove_C7(){
       list.next();
       list.next();
       list.next();
